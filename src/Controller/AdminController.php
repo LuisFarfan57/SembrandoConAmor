@@ -1,0 +1,18 @@
+<?php
+
+
+namespace App\Controller;
+
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class AdminController extends AbstractController
+{
+    /**
+     * @Route("/admin/", name="app_admin")
+     */
+    function x() {
+        return $this->render('Administrador/login.html.twig');
+    }
+}
