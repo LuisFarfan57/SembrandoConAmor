@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+}
+
+/* Header */
+
+#homepageHeader {
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    box-shadow: 0px 7px 5px #00000033;
+    opacity: 0.85;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.contenedorHeader {
+    padding: 0.75rem;
+}
+
+#iconoMenu {
+    display: none;
+}
+
+#modalMenu {
+    display: none;
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    background-color: #818181;
+    opacity: 0.7;
+    left: 10%;
+    top: 10%;
+    z-index: 1500;
+}
+
+#modalMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: auto auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+}
+
+#modalMenu ul li a {
+    display: block;
+    padding: 1rem;
+    font: Light 26px/31px Roboto;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+#cerrarModal {
+    cursor: pointer;
+}
+
+.navegacion ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navegacion ul li {
+    display: inline-block;
+}
+
+.navegacion ul li a {
+    display: block;
+    padding: 1rem;
+    letter-spacing: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.inactiva {
+    color: #2D2D2D !important;
+    opacity: 1;
+}
+
+.activa {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.10rem;
+    letter-spacing: 0;
+    color: #3A7F0D !important;
+    opacity: 1;
+}
+
+/* Header */
+
+/* Contenido */
+
+#contenedorInformacionQuienesSomos {
+    background: #3A7F0D 0% 0% no-repeat padding-box;
+    border-radius: 46px;
+    opacity: 0.7;
+    position: absolute;
+    top: 9rem;
+}
+
+#queHacemos {
+    padding-top: 8rem;
+}
+
+#conoceALasFamilias {
+    padding-top: 8rem;
+}
+
+#comoPuedesAyudarnos {
+    padding-top: 8rem;
+}
+
+#necesitasAyuda {
+    padding-top: 8rem;
+}
+
+#contacto {
+    background-color: #00263A;
+    padding-top: 8rem;
+    padding-bottom: 7rem;
+}
+
+/* Contenido */
+
+@media only screen and (max-width: 992px) {
+    #iconoSembrandoConAmor {
+        height: 60px;
+    }
+
+    .contenedorHeader {
+        padding: 0.75rem 1rem;
+    }
+
+    #iconoMenu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navegacion {
+        display: none;
+    }
+
+    #modalMenu.visible {
+        display: block;
+    }
+
+    #sobreNosotros img {
+        width: 100%;
+    }
+
+    #perfilesDeUsuario img {
+        width: 60%;
+    }
+}
+
+/* Elementos */
+
+.tituloSeccionVerde {
+    font-weight: bold;
+    color: #3A7F0D;
+}
+
+.tituloSeccionNegro {
+    font-weight: lighter;
+    color: #00263A;
+}
+
+.tituloSeccionBlancoBold {
+    font-weight: bold;
+    color: white;
+}
+
+.tituloSeccionBlanco {
+    font-weight: lighter;
+    color: white;
+}
+
+.tituloPrincipal {
+    font-family: "Roboto";
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.tituloSecundario {
+    font-family: "Roboto Light";
+    margin-top: 0;
+}
+
+.textoRobotoLight {
+    font-family: "Roboto";
+    font-weight: lighter;
+}
