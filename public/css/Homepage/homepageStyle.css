@@ -1,5 +1,10 @@
 body {
     margin: 0;
+    font-family: Raleway;
+}
+
+label {
+    font-family: inherit;
 }
 
 /* Header */
@@ -106,12 +111,58 @@ body {
     padding-top: 8rem;
 }
 
+.contenedor_texto_carousel {
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 0.45;
+    color: white;
+    height: 70%;
+    width: 40%;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+
+.titulo_texto_carousel {
+    font-weight: bold;
+}
+
+.texto_carousel {
+    font-weight: lighter;
+}
+
 #conoceALasFamilias {
     padding-top: 8rem;
 }
 
 #comoPuedesAyudarnos {
     padding-top: 8rem;
+}
+
+.imagen_comoPuedesAyudarnos {
+    width: 17.5rem;
+    height: 17.5rem;
+}
+
+.titulo_comoPuedesAyudarnos {
+    font-weight: bold;
+    color: #2D2D2D;
+}
+
+.btn_comoPuedesAyudarnos {
+    background: #49A010 0% 0% no-repeat padding-box;
+    border: none;
+    outline: none;
+    border-radius: 23px;
+    opacity: 1;
+    color: white;
+}
+
+.opcion_donacionMonetaria_cantidad {
+    font-size: 2.5rem;
+}
+
+.opcion_donacionMonetaria_descripcion {
+    font-size: 1.25rem;
 }
 
 #necesitasAyuda {
@@ -122,6 +173,7 @@ body {
     background-color: #00263A;
     padding-top: 8rem;
     padding-bottom: 7rem;
+    color: white;
 }
 
 /* Contenido */
@@ -147,14 +199,6 @@ body {
     #modalMenu.visible {
         display: block;
     }
-
-    #sobreNosotros img {
-        width: 100%;
-    }
-
-    #perfilesDeUsuario img {
-        width: 60%;
-    }
 }
 
 /* Elementos */
@@ -179,18 +223,21 @@ body {
     color: white;
 }
 
-.tituloPrincipal {
-    font-family: "Roboto";
-    font-weight: bold;
-    margin-bottom: 0;
+.inputSembrandoConAmor {
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    opacity: 1;
+    font-family: inherit;
 }
 
-.tituloSecundario {
-    font-family: "Roboto Light";
-    margin-top: 0;
-}
-
-.textoRobotoLight {
-    font-family: "Roboto";
-    font-weight: lighter;
+.fileInput {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
