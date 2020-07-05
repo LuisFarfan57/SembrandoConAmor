@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block contenido %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 col-12 text-center p-5">
+                <a href="{{ path('app_admin_solicitudes_familia') }}">
+                    <button class="btn btn-primary" style="width: 100%;">Ver solicitudes de ayuda</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-12 text-center p-5">
+                <a href="{{ path('app_admin_comprobaciones_donacion') }}">
+                    <button class="btn btn-primary" style="width: 100%;">Ver comprobaciones de donación</button>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

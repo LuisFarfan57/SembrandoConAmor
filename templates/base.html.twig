@@ -3,12 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ asset('Componentes_externos/Bootstrap_4.4.1/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/Homepage/homepageStyle.css') }}">
+
         {% block estilos %}{% endblock %}
     </head>
     <body>
         {% block contenido %}
             <h1>Sembrando con amor</h1>
         {% endblock %}
+
+        <script src="{{ asset('Componentes_externos/JQuery/jquery-3.4.1.js') }}"></script>
+        <script src="{{ asset('Componentes_externos/Bootstrap_4.4.1/js/bootstrap.bundle.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

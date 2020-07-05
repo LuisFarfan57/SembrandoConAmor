@@ -5,5 +5,5 @@ vich_uploader:
         comprobante_donacion:
             uri_prefix: /archivos/comprobantesDonacion/
             upload_destination: '%kernel.project_dir%/public/archivos/comprobantesDonacion'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            namer: Vich\UploaderBundle\Naming\OrignameNamer
             delete_on_remove: true
