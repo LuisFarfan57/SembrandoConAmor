@@ -22,22 +22,7 @@ class Familia
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $primer_nombre;
-
-    /**
-     * @ORM\Column(type="string", length=50, nullable=true)
-     */
-    private $segundo_nombre;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $primer_apellido;
-
-    /**
-     * @ORM\Column(type="string", length=50, nullable=true)
-     */
-    private $segundo_apellido;
+    private $nombre_completo;
 
     /**
      * @ORM\Column(type="integer")
@@ -80,50 +65,14 @@ class Familia
         return $this->id;
     }
 
-    public function getPrimerNombre(): ?string
+    public function getNombreCompleto(): ?string
     {
-        return $this->primer_nombre;
+        return $this->nombre_completo;
     }
 
-    public function setPrimerNombre(string $primer_nombre): self
+    public function setNombreCompleto(string $nombreCompleto): self
     {
-        $this->primer_nombre = $primer_nombre;
-
-        return $this;
-    }
-
-    public function getSegundoNombre(): ?string
-    {
-        return $this->segundo_nombre;
-    }
-
-    public function setSegundoNombre(?string $segundo_nombre): self
-    {
-        $this->segundo_nombre = $segundo_nombre;
-
-        return $this;
-    }
-
-    public function getPrimerApellido(): ?string
-    {
-        return $this->primer_apellido;
-    }
-
-    public function setPrimerApellido(string $primer_apellido): self
-    {
-        $this->primer_apellido = $primer_apellido;
-
-        return $this;
-    }
-
-    public function getSegundoApellido(): ?string
-    {
-        return $this->segundo_apellido;
-    }
-
-    public function setSegundoApellido(?string $segundo_apellido): self
-    {
-        $this->segundo_apellido = $segundo_apellido;
+        $this->nombre_completo = $nombreCompleto;
 
         return $this;
     }

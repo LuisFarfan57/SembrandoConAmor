@@ -71,3 +71,16 @@ document.addEventListener('scroll', function () {
         });
     }
 });
+
+const fileInput = document.getElementById('comprobanteDonante');
+fileInput.addEventListener('change', function () {
+    cargarNombreArchivoEnTexto(fileInput);
+});
+
+const textoArchivo = document.getElementById('nombreArchivo');
+
+function cargarNombreArchivoEnTexto(input) {
+    if(input.files && input.files[0]) {
+        textoArchivo.innerHTML = input.files[0].name;
+    }
+}

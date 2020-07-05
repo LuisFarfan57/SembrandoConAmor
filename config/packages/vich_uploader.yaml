@@ -1,0 +1,9 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        comprobante_donacion:
+            uri_prefix: /archivos/comprobantesDonacion/
+            upload_destination: '%kernel.project_dir%/public/archivos/comprobantesDonacion'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_remove: true
