@@ -29,13 +29,13 @@ class DonacionMonetaria
 
     /**
      * @ORM\ManyToOne(targetEntity=Familia::class, inversedBy="donacionesMonetarias")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $familia;
 
     /**
      * @ORM\ManyToOne(targetEntity=Donador::class, inversedBy="donacionesMonetarias")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $donador;
 

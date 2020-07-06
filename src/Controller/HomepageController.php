@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Donador;
 use App\Entity\Familia;
+use App\Repository\DonadorRepository;
 use App\Repository\FamiliaRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,7 +18,7 @@ class HomepageController extends AbstractController
     /**
      * @Route("/", name="app_homepage")
      */
-    function homepage(Request $request, EntityManagerInterface $entityManager) {
+    function homepage(Request $request, EntityManagerInterface $entityManager, DonadorRepository $donadorRepository) {
         if ($request->getMethod() === 'POST') {
             if ($request->request->get('formulario') === 'formFamilia') {
                 $familia = new Familia();

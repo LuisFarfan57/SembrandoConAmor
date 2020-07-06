@@ -28,14 +28,19 @@ class DonacionViveres
     private $unidad_medida;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    private $cantidad;
+
+    /**
      * @ORM\ManyToOne(targetEntity=Familia::class, inversedBy="donacionesViveres")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $familia;
 
     /**
      * @ORM\ManyToOne(targetEntity=Donador::class, inversedBy="donacionesViveres")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $donador;
 
@@ -64,6 +69,18 @@ class DonacionViveres
     public function setUnidadMedida(string $unidad_medida): self
     {
         $this->unidad_medida = $unidad_medida;
+
+        return $this;
+    }
+
+    public function getCantidad(): ?int
+    {
+        return $this->cantidad;
+    }
+
+    public function setCantidad(int $cantidad): self
+    {
+        $this->cantidad = $cantidad;
 
         return $this;
     }

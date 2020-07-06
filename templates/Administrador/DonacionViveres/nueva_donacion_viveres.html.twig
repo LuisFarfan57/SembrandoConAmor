@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nueva donacion víveres{% endblock %}
+
+{% block contenido %}
+    <div class="container mt-5 mb-5">
+        <div class="row mb-5">
+            <div class="col-lg-8 offset-lg-2 col-12">
+                <a href="{{ path('app_admin_inicio') }}">
+                    <button class="btn btn-primary">Regresar</button>
+                </a>
+            </div>
+        </div>
+        <form method="post">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <h1 class="mb-3 font-weight-bold text-center">Ingresar donación de víveres</h1>
+
+                    {% if error %}
+                        <div class="alert alert-danger mb-3">{{ error }}</div>
+                    {% endif %}
+
+                    <div id="contenedorViveres" class="mb-3 mt-5">
+                        <div class="d-flex align-items-center" id="producto_1">
+                            <div class="mr-3">
+                                <p>Nombre del producto</p>
+                                <input type="text" name="nombreProducto_1" id="nombreProducto_1" class="form-control" required autofocus>
+                            </div>
+
+                            <div class="mr-3">
+                                <p>Unidad de medida</p>
+                                <select name="unidadMedida_1" id="unidadMedida_1" class="form-control" required>
+                                    <option value="lb">Libra</option>
+                                    <option value="kg">Kilogramo</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <p>Cantidad</p>
+                                <input type="number" name="cantidad_1" id="cantidad_1" class="form-control" min="1" value="1" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="button" onclick="nuevoProducto();">Agregar producto</button>
+
+                    <br>
+
+                    <button class="btn btn-lg btn-primary mt-3" type="submit">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        let cantidad = 1;
+
+        function nuevoProducto() {
+            cantidad++;
+            document.getElementById('contenedorViveres').appendChild(crearNuevoIngresoDeProducto());
+        }
+
+        function crearNuevoIngresoDeProducto() {
+            //Nombre del producto
+            let inputNombreProducto = document.createElement('input');
+            inputNombreProducto.setAttribute('type', 'text');
+            inputNombreProducto.setAttribute('name', 'nombreProducto_' + cantidad);
+            inputNombreProducto.setAttribute('id', 'nombreProducto_' + cantidad);
+            inputNombreProducto.setAttribute('class', 'form-control');
+            inputNombreProducto.setAttribute('required', 'required');
+
+            let contenedorNombreProducto = document.createElement('div');
+            contenedorNombreProducto.setAttribute('class', 'mr-3');
+            contenedorNombreProducto.append(inputNombreProducto);
+
+            //Unidad de medida del producto
+            let inputUnidadMedidaProducto = document.createElement('select');
+            inputUnidadMedidaProducto.setAttribute('name', 'unidadMedida_' + cantidad);
+            inputUnidadMedidaProducto.setAttribute('id', 'unidadMedida_' + cantidad);
+            inputUnidadMedidaProducto.setAttribute('class', 'form-control');
+            inputUnidadMedidaProducto.setAttribute('required', 'required');
+
+            inputUnidadMedidaProducto.append(($('<option></option>').val('lb').text('Libra'))[0]);
+            inputUnidadMedidaProducto.append(($('<option></option>').val('kg').text('Kilogramo'))[0]);
+            inputUnidadMedidaProducto.append(($('<option></option>').val('otro').text('Otro'))[0]);
+
+            let contenedorUnidadMedidaProducto = document.createElement('div');
+            contenedorUnidadMedidaProducto.setAttribute('class', 'mr-3');
+            contenedorUnidadMedidaProducto.append(inputUnidadMedidaProducto);
+
+            //Cantidad del producto
+            let inputCantidadProducto = document.createElement('input');
+            inputCantidadProducto.setAttribute('type', 'number');
+            inputCantidadProducto.setAttribute('name', 'cantidad_' + cantidad);
+            inputCantidadProducto.setAttribute('id', 'cantidad_' + cantidad);
+            inputCantidadProducto.setAttribute('class', 'form-control');
+            inputCantidadProducto.setAttribute('min', '1');
+            inputCantidadProducto.setAttribute('value', '1');
+            inputCantidadProducto.setAttribute('required', 'required');
+
+            let contenedorCantidadProducto = document.createElement('div');
+            contenedorCantidadProducto.append(inputCantidadProducto);
+
+            //contenedor producto
+            let contenedorProducto = document.createElement('div');
+            contenedorProducto.setAttribute('class', 'd-flex align-items-center mt-3');
+            contenedorProducto.setAttribute('id', 'producto_' + cantidad);
+            contenedorProducto.append(contenedorNombreProducto, contenedorUnidadMedidaProducto, contenedorCantidadProducto);
+
+            return contenedorProducto;
+        }
+    </script>
+{% endblock %}

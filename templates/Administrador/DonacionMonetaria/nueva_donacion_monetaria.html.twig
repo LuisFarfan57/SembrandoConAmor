@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nueva donacion monetaria{% endblock %}
+
+{% block contenido %}
+    <div class="container mt-5 mb-5">
+        <div class="row mb-5">
+            <div class="col-lg-8 offset-lg-2 col-12">
+                <a href="{{ path('app_admin_inicio') }}">
+                    <button class="btn btn-primary">Regresar</button>
+                </a>
+            </div>
+        </div>
+        <form method="post">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <h1 class="mb-3 font-weight-bold text-center">Ingresar donación</h1>
+
+                    {% if error %}
+                        <div class="alert alert-danger mb-3">{{ error }}</div>
+                    {% endif %}
+
+                    <label for="nombreDonacion">Nombre donante *opcional</label>
+                    <input type="text" name="nombreDonacion" id="nombreDonacion" class="form-control mb-3" autofocus>
+                    <label for="cantidadDonacion">Cantidad</label>
+                    <input type="number" name="cantidadDonacion" id="cantidadDonacion" class="form-control" min="1" required>
+
+                    <button class="btn btn-lg btn-primary mt-3" type="submit">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
