@@ -1,10 +1,7 @@
 body {
     margin: 0;
-    font-family: Raleway;
-}
-
-label {
-    font-family: inherit;
+    font-family: 'ralewaylight';
+    color: #2D2D2D;
 }
 
 /* Header */
@@ -84,12 +81,13 @@ label {
 .inactiva {
     color: #2D2D2D !important;
     opacity: 1;
+    font-size: 0.85rem;
 }
 
 .activa {
     text-align: left;
-    font-weight: bold;
-    font-size: 1.10rem;
+    font-family: 'ralewaybold';
+    font-size: 1rem;
     letter-spacing: 0;
     color: #3A7F0D !important;
     opacity: 1;
@@ -144,7 +142,7 @@ label {
 }
 
 .titulo_comoPuedesAyudarnos {
-    font-weight: bold;
+    font-family: 'ralewayblack';
     color: #2D2D2D;
 }
 
@@ -203,13 +201,15 @@ label {
 
 /* Elementos */
 
+.Raleway-Black {
+    font-family: "ralewayblack";
+}
+
 .tituloSeccionVerde {
-    font-weight: bold;
     color: #3A7F0D;
 }
 
 .tituloSeccionNegro {
-    font-weight: lighter;
     color: #00263A;
 }
 
@@ -240,4 +240,9 @@ label {
     overflow: hidden;
     position: absolute;
     z-index: -1;
+}
+
+button:focus, button:active {
+    box-shadow: none !important;
+    outline: none !important;
 }
