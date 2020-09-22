@@ -21,7 +21,6 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Comprobante</th>
-                        <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,10 +30,6 @@
                             <td>{{ donador.nombre }}</td>
                             <td>{{ donador.correoElectronico }}</td>
                             <td><a href="{{ asset('archivos/comprobantesDonacion/' ~ donador.nombreArchivo) }}" download="{{ donador.nombreArchivo | split('_')[1] }}">{{ donador.nombreArchivo | split('_')[1] }}</a></td>
-                            <td>
-                                <button type="button" class="btn btn-success" style="width: 100%">Comprobar</button>
-                                <br><button class="btn btn-danger mt-2" style="width: 100%">Denegar</button>
-                            </td>
                         </tr>
                     {% else %}
                         <tr>

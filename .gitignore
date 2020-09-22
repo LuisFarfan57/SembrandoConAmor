@@ -1,16 +1,9 @@
-
-###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
-/vendor/
-###< symfony/framework-bundle ###
-
-###> symfony/phpunit-bridge ###
-.phpunit
-.phpunit.result.cache
-/phpunit.xml
-###< symfony/phpunit-bridge ###
+.idea/jsLibraryMappings.xml
+.idea/
+.idea/modules.xml
+app/vendor/
+app/composer.lock
+app/wt_config.yml
+app/.env
+docker/mariadb/data
+app/var/
