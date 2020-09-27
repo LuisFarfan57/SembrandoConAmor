@@ -13,9 +13,19 @@
         {% block estilos %}{% endblock %}
     </head>
     <body>
-        {% block contenido %}
-            <h1>Sembrando con amor</h1>
+        {% block cerrarSesion %}
+        <div class="container">
+            <div class="row">
+                <div class="col pt-5 pl-5 pr-5 pb-0 d-flex justify-content-end">
+                    <a class="btn btn-danger" href="{{ path('app_logout') }}" style="text-decoration: none;">
+                        Cerrar sesión
+                    </a>
+                </div>
+            </div>
+        </div>
         {% endblock %}
+
+        {% block contenido %}{% endblock %}
 
         <script src="{{ asset('Componentes_externos/JQuery/jquery-3.4.1.js') }}"></script>
         <script src="{{ asset('Componentes_externos/Bootstrap_4.4.1/js/bootstrap.bundle.js') }}"></script>

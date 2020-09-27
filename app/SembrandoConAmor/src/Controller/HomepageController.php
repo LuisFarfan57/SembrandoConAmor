@@ -6,8 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Donador;
 use App\Entity\Familia;
-use App\Repository\DonadorRepository;
-use App\Repository\FamiliaRepository;
+use App\Repository\DonacionMonetariaRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,7 +17,9 @@ class HomepageController extends AbstractController
     /**
      * @Route("/", name="app_homepage")
      */
-    function homepage(Request $request, EntityManagerInterface $entityManager, DonadorRepository $donadorRepository) {
+    function homepage(Request $request, EntityManagerInterface $entityManager, DonacionMonetariaRepository $donacionMonetariaRepository) {
+        $cantidadDonada = $donacionMonetariaRepository->getCantidadDonada();
+        $cantidadCanastas = $cantidadDonada ? $cantidadDonada / 75 : 0;
         if ($request->getMethod() === 'POST') {
             if ($request->request->get('formulario') === 'formFamilia') {
                 $familia = new Familia();
@@ -48,6 +49,8 @@ class HomepageController extends AbstractController
             }
         }
 
-        return $this->render('Homepage/homepage.html.twig');
+        return $this->render('Homepage/homepage.html.twig', [
+            'cantidadCanastas' => $cantidadCanastas
+        ]);
     }
 }

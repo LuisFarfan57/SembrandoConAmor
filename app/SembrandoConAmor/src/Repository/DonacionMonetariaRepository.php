@@ -47,4 +47,12 @@ class DonacionMonetariaRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function getCantidadDonada()
+    {
+        return $this->createQueryBuilder('donacionMonetaria')
+            ->select('SUM(donacionMonetaria.cantidad)')
+            ->getQuery()
+            ->getSingleScalarResult()
+            ;
+    }
 }

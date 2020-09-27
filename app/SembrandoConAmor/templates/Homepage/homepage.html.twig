@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('Componentes_externos/Fonts/Raleway/Raleway_webfontkit.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Homepage/homepageStyle.css') }}">
 </head>
-<body>
+<body class="esconderScroll">
 <!-- Header -->
 <header id="homepageHeader">
     <div class="d-flex justify-content-between align-items-center flex-wrap contenedorHeader">
@@ -19,9 +19,9 @@
             <img id="iconoSembrandoConAmor" class="mr-4" src="{{ asset('assets/iconos/Homepage/icono_sembrandoConAmor_verde.svg') }}" alt="Sembrando con amor">
 
             <div>
-                <p class="Raleway-Black m-0" style="color: #00263A;"><span class="Raleway-Black" id="cantidadFamiliasAyudadas" style="font-size: 1.5rem;">10</span> familias ayudadas</p>
+                <p class="Raleway-Black m-0" style="color: #00263A;"><span class="Raleway-Black" id="cantidadFamiliasAyudadas" style="font-size: 1.5rem;">{{ cantidadCanastas }}</span> canastas entregadas</p>
                 <div class="progress" style="width: 15rem; background-color: #00263A;">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%; background-color: #3A7F0D;"></div>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ cantidadCanastas }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ cantidadCanastas }}%; background-color: #3A7F0D;"></div>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
     <section id="quienesSomos">
         <div class="container-fluid">
             <div class="row">
-                <img src="{{ asset('assets/imagenes/Homepage/imagen_quienesSomos.png') }}" width="100%">
+                <img src="{{ asset('assets/imagenes/Homepage/imagen_quienesSomos.png') }}" width="100%" style="object-fit: cover;">
                 <div class="col-lg-6 offset-lg-3 p-5 text-center d-flex align-items-center flex-column" id="contenedorInformacionQuienesSomos">
                     <img class="mb-5" src="{{ asset('assets/iconos/Homepage/icono_sembrandoConAmor_blanco_completo.svg') }}" width="50%" alt="Sembrando con amor">
 
@@ -253,8 +253,8 @@
                                     <h3 class="mt-5"><span class="tituloSeccionNegro">¿Cómo realizar tu </span><span class="tituloSeccionVerde Raleway-Black">DONACIÓN?</span></h3>
 
                                     <p style="color: #00263A; font-weight: bold;" class="mt-5">Si deseas apadrinar a una familia o realizar una donación libre puedes depositar a:</p>
-                                    <p class="mb-5">Cuenta monetaria del banco <span style="font-weight: bold;">X <br> 00000000</span> <br> a nombre de:
-                                        <br> <span style="font-weight: bold">Luis Enrique Farfán Prado</span> <br> con el asunto: <span style="font-weight: bold; color: #3A7F0D;">"Sembrando con amor"</span></p>
+                                    <p class="mb-5">Cuenta monetaria del banco <span style="font-weight: bold;">Banrural <br> 3532028772</span> <br> a nombre de:
+                                        <br> <span style="font-weight: bold">MISION CRISTIANA EVANGELICA</span> <br> con el asunto: <span style="font-weight: bold; color: #3A7F0D;">"Sembrando con amor"</span></p>
 
                                     <p class="mt-5 mb-3"><span class="font-weight-bold Raleway-Black">Recuerda</span> enviar tu comprobante de pago junto con tu nombre y correo electrónico, para que sepamos que realizaste una transacción. Te enviaremos un certificado que haga constar tu donación. </p>
 
@@ -325,8 +325,8 @@
                 <div class="col text-center">
                     <h1><span class="tituloSeccionBlancoBold">INFORMACIÓN</span><span class="tituloSeccionBlanco"> de contacto</span></h1>
 
-                    <p class="mt-5"><img src="{{ asset('assets/iconos/Homepage/icono_direccion_blanco.svg') }}" class="mr-3" alt="Dirección">Dirección</p>
-                    <p class="mb-5"><img src="{{ asset('assets/iconos/Homepage/icono_telefono.svg') }}" class="mr-3" alt="Teléfono">Teléfono</p>
+                    <p class="mt-5"><img src="{{ asset('assets/iconos/Homepage/icono_direccion_blanco.svg') }}" class="mr-3" alt="Dirección">5ta. Calle B 2-59 Guatel 2, Villa Nueva</p>
+                    <p class="mb-5"><img src="{{ asset('assets/iconos/Homepage/icono_telefono.svg') }}" class="mr-3" alt="Teléfono">59653784 - 50199588</p>
 
                     <p>Visita nuestras redes sociales</p>
                     <div class="row">

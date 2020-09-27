@@ -19,18 +19,6 @@ class FamiliaRepository extends ServiceEntityRepository
         parent::__construct($registry, Familia::class);
     }
 
-    /**
-    * @return Familia[] Returns an array of Familia objects
-    */
-    public function prueba()
-    {
-        return $this->createQueryBuilder('f')
-            ->andWhere('f.primer_nombre = Luis')
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-
     /*
     public function findOneBySomeField($value): ?Familia
     {

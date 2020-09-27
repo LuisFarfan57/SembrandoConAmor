@@ -201,6 +201,15 @@ body {
 
 /* Elementos */
 
+.esconderScroll::-webkit-scrollbar {
+    display: none;
+}
+
+.esconderScroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .Raleway-Black {
     font-family: "ralewayblack";
 }
