@@ -24,7 +24,7 @@ class AppAdminAuthenticator extends AbstractFormLoginAuthenticator implements Pa
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_admin_login';
+    public const LOGIN_ROUTE = 'app_login';
 
     private $entityManager;
     private $urlGenerator;

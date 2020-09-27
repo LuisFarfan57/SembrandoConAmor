@@ -21,34 +21,6 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("login", name="app_admin_login")
-     */
-    public function login(AuthenticationUtils $authenticationUtils)
-    {
-        if ($this->getUser()) {
-            return $this->redirectToRoute('app_admin_inicio');
-        }
-
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('Administrador/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error' => $error
-        ]);
-    }
-
-    /**
-     * @Route("logout", name="app_admin_logout")
-     */
-    public function logout()
-    {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
-    }
-
-    /**
      * @Route("inicio", name="app_admin_inicio")
      */
     public function inicio() {
