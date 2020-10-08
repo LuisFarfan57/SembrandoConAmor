@@ -16,6 +16,11 @@ body {
     z-index: 1000;
 }
 
+#barraDeProgreso {
+    width: 15rem;
+    background-color: #00263A;
+}
+
 .contenedorHeader {
     padding: 0.75rem;
 }
@@ -29,10 +34,10 @@ body {
     position: fixed;
     width: 80%;
     height: 80%;
-    background-color: #818181;
-    opacity: 0.7;
+    background-color: #2e660b;
+    opacity: 0.85;
     left: 10%;
-    top: 10%;
+    top: 15%;
     z-index: 1500;
 }
 
@@ -50,14 +55,17 @@ body {
 #modalMenu ul li a {
     display: block;
     padding: 1rem;
-    font: Light 26px/31px Roboto;
     letter-spacing: 0;
-    color: #FFFFFF;
+    color: white!important;
+    font-weight: bold;
     opacity: 1;
 }
 
 #cerrarModal {
     cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
 
 .navegacion ul {
@@ -97,12 +105,19 @@ body {
 
 /* Contenido */
 
+#quienesSomos {
+    background-image: url("../../assets/imagenes/Homepage/imagen_quienesSomos.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #contenedorInformacionQuienesSomos {
     background: #3A7F0D 0% 0% no-repeat padding-box;
     border-radius: 46px;
     opacity: 0.7;
-    position: absolute;
-    top: 9rem;
+    width: 80%;
+    margin: 8rem auto 3rem auto;
 }
 
 #queHacemos {
@@ -174,11 +189,24 @@ body {
     color: white;
 }
 
+#iconoSembrandoConAmorFooter {
+    height: 10rem;
+}
+
+#iconoConectadosFooter {
+    height: 6rem;
+}
+
 /* Contenido */
 
 @media only screen and (max-width: 992px) {
     #iconoSembrandoConAmor {
         height: 60px;
+    }
+
+    #barraDeProgreso {
+        width: 11rem;
+        background-color: #00263A;
     }
 
     .contenedorHeader {
@@ -190,12 +218,33 @@ body {
         cursor: pointer;
     }
 
+    #iconoMenu img {
+        width: 2rem;
+        height: 2rem;
+    }
+
     .navegacion {
         display: none;
     }
 
     #modalMenu.visible {
         display: block;
+    }
+
+    #contenedorInformacionQuienesSomos {
+        background: #3A7F0D 0% 0% no-repeat padding-box;
+        border-radius: 46px;
+        opacity: 0.7;
+        width: 90%;
+        margin: 7rem auto 3rem auto;
+    }
+
+    #iconoSembrandoConAmorFooter {
+        height: 7rem;
+    }
+
+    #iconoConectadosFooter {
+        height: 3rem;
     }
 }
 

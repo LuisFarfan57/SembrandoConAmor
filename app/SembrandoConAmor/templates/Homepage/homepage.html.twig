@@ -20,7 +20,7 @@
 
             <div>
                 <p class="Raleway-Black m-0" style="color: #00263A;"><span class="Raleway-Black" id="cantidadFamiliasAyudadas" style="font-size: 1.5rem;">{{ cantidadCanastas }}</span> canastas entregadas</p>
-                <div class="progress" style="width: 15rem; background-color: #00263A;">
+                <div class="progress" id="barraDeProgreso">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ cantidadCanastas }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ cantidadCanastas }}%; background-color: #3A7F0D;"></div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
 
         <div class="d-flex align-items-center">
             <span id="iconoMenu" class="ml-4">
-                <img src="{{ asset('assets/Iconos/Homepage/iconoMenuHomepage.svg') }}" alt="Menú">
+                <img src="{{ asset('assets/iconos/Homepage/iconoMenuHomepage.svg') }}" alt="Menú">
             </span>
             <nav class="navegacion ml-3">
                 <ul>
@@ -44,10 +44,8 @@
     </div>
 </header>
 
-<div id="modalMenu">
-    <div style="width: 100%; display: flex; justify-content: flex-end; padding: 1rem">
-        <img src="{{ asset('assets/Iconos/Homepage/iconoCerrarModal.svg') }}" alt="Cerrar" class="cerrarModal" id="cerrarModal">
-    </div>
+<div id="modalMenu" class="pt-5">
+    <img src="{{ asset('assets/iconos/Homepage/iconoCerrarModal.svg') }}" alt="Cerrar" class="cerrarModal" id="cerrarModal">
 
     <ul>
         <li><a href="#quienesSomos" class="inactiva">¿Quiénes somos?</a></li>
@@ -63,8 +61,7 @@
     <section id="quienesSomos">
         <div class="container-fluid">
             <div class="row">
-                <img src="{{ asset('assets/imagenes/Homepage/imagen_quienesSomos.png') }}" width="100%" style="object-fit: cover;">
-                <div class="col-lg-6 offset-lg-3 p-5 text-center d-flex align-items-center flex-column" id="contenedorInformacionQuienesSomos">
+                <div class="p-5 text-center d-flex align-items-center flex-column" id="contenedorInformacionQuienesSomos">
                     <img class="mb-5" src="{{ asset('assets/iconos/Homepage/icono_sembrandoConAmor_blanco_completo.svg') }}" width="50%" alt="Sembrando con amor">
 
                     <p style="color: white;" class="mb-5">Somos un grupo de jóvenes apasionados por Cristo, pertenecientes a la iglesia “Casa de Oración, Espíritu de Libertad”, que buscan compartir del amor de Dios acá en la Tierra por medio del servicio al prójimo.</p>
@@ -344,10 +341,10 @@
                     
                     <div class="row mt-5">
                         <div class="col d-flex align-items-center justify-content-center">
-                            <img style="height: 10rem;" src="{{ asset('assets/iconos/Homepage/icono_sembrandoConAmor_blanco_completo.svg') }}" alt="Sembrando con amor">
+                            <img id="iconoSembrandoConAmorFooter" src="{{ asset('assets/iconos/Homepage/icono_sembrandoConAmor_blanco_completo.svg') }}" alt="Sembrando con amor">
                         </div>
                         <div class="col d-flex align-items-center justify-content-center">
-                            <img style="height: 6rem;" src="{{ asset('assets/iconos/Homepage/icono_conectados_blanco.png') }}" alt="Conectados">
+                            <img id="iconoConectadosFooter" src="{{ asset('assets/iconos/Homepage/icono_conectados_blanco.png') }}" alt="Conectados">
                         </div>
                     </div>
                 </div>
