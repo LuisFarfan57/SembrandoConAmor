@@ -125,14 +125,15 @@ body {
 }
 
 .contenedor_texto_carousel {
-    background: #000000 0% 0% no-repeat padding-box;
-    opacity: 0.45;
+    background: rgba(0, 0, 0, 0.45);
     color: white;
     height: 70%;
     width: 40%;
     position: absolute;
     top: 15%;
     left: 10%;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .titulo_texto_carousel {
