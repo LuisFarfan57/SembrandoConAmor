@@ -23,7 +23,7 @@ class DonacionMonetaria
     private $nombre;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable=true)
      */
     private $cantidad;
 
@@ -38,6 +38,11 @@ class DonacionMonetaria
      * @ORM\JoinColumn(nullable=true)
      */
     private $donador;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $cantidadBolsas;
 
     public function getId(): ?int
     {
@@ -88,6 +93,18 @@ class DonacionMonetaria
     public function setDonador(?Donador $donador): self
     {
         $this->donador = $donador;
+
+        return $this;
+    }
+
+    public function getCantidadBolsas(): ?int
+    {
+        return $this->cantidadBolsas;
+    }
+
+    public function setCantidadBolsas(?int $cantidadBolsas): self
+    {
+        $this->cantidadBolsas = $cantidadBolsas;
 
         return $this;
     }

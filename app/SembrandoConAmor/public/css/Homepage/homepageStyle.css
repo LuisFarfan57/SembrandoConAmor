@@ -124,6 +124,24 @@ body {
     padding-top: 8rem;
 }
 
+#carouselQueHacemos {
+    height: 30rem;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+}
+
 .contenedor_texto_carousel {
     background: rgba(0, 0, 0, 0.45);
     color: white;
@@ -158,7 +176,7 @@ body {
 }
 
 .titulo_comoPuedesAyudarnos {
-    font-family: 'ralewayblack';
+    font-family: 'ralewayextrabold';
     color: #2D2D2D;
 }
 

@@ -19,7 +19,9 @@ class HomepageController extends AbstractController
      */
     function homepage(Request $request, EntityManagerInterface $entityManager, DonacionMonetariaRepository $donacionMonetariaRepository) {
         $cantidadDonada = $donacionMonetariaRepository->getCantidadDonada();
-        $cantidadCanastas = $cantidadDonada ? $cantidadDonada / 75 : 0;
+        $cantidadCanastas = $donacionMonetariaRepository->getCantidadBolsas();
+        $cantidadCanastas = ($cantidadCanastas ? $cantidadCanastas : 0) + floor($cantidadDonada ? $cantidadDonada / 75 : 0);
+
         if ($request->getMethod() === 'POST') {
             if ($request->request->get('formulario') === 'formFamilia') {
                 $familia = new Familia();

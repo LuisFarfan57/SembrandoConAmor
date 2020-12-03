@@ -22,8 +22,17 @@
 
                     <label for="nombreDonacion">Nombre donante *opcional</label>
                     <input type="text" name="nombreDonacion" id="nombreDonacion" class="form-control mb-3" autofocus>
-                    <label for="cantidadDonacion">Cantidad</label>
-                    <input type="number" name="cantidadDonacion" id="cantidadDonacion" class="form-control" min="1" required>
+
+                    <div class="d-flex align-items-center">
+                        <div class="mr-3">
+                            <label for="cantidadDonacion">Cantidad de dinero</label>
+                            <input type="number" name="cantidadDonacion" id="cantidadDonacion" class="form-control" min="1">
+                        </div>
+                        <div>
+                            <label for="cantidadBolsas">Cantidad de bolsas</label>
+                            <input type="number" name="cantidadBolsas" id="cantidadBolsas" class="form-control" min="1">
+                        </div>
+                    </div>
 
                     <button class="btn btn-lg btn-primary mt-3" type="submit">Guardar</button>
                 </div>

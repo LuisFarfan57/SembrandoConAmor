@@ -60,7 +60,11 @@ class AdminController extends AbstractController
                 $donacionMonetaria->setNombre($request->request->get('nombreDonacion'));
             }
 
-            $donacionMonetaria->setCantidad($request->request->get('cantidadDonacion'));
+            if (trim($request->request->get('cantidadDonacion')) !== '')
+                $donacionMonetaria->setCantidad($request->request->get('cantidadDonacion'));
+
+            if (trim($request->request->get('cantidadBolsas')) !== '')
+                $donacionMonetaria->setCantidadBolsas($request->request->get('cantidadBolsas'));
 
             $entityManager->persist($donacionMonetaria);
             $entityManager->flush();
