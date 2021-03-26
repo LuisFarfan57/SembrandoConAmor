@@ -8,9 +8,16 @@ use App\Entity\Donador;
 use App\Entity\Familia;
 use App\Repository\DonacionMonetariaRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Lcobucci\JWT\Builder;
+use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Signer\Key;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mercure\PublisherInterface;
+use Symfony\Component\Mercure\Update;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class HomepageController extends AbstractController
 {
@@ -51,8 +58,51 @@ class HomepageController extends AbstractController
             }
         }
 
-        return $this->render('Homepage/homepage.html.twig', [
+        //$username = $this->getUser()->getUsername();
+        /*$token = (new Builder())
+            ->withClaim('mercure', ['subscribe' => [sprintf("/%s", 'Farfan_57')]])
+            ->getToken(
+                new Sha256(),
+                new Key('!ChangeMe!')
+            );*/
+
+        $response = $this->render('Homepage/homepage.html.twig', [
             'cantidadCanastas' => $cantidadCanastas
         ]);
+
+        /*$response->headers->setCookie(
+            new Cookie(
+                'mercureAuthorization',
+                $token,
+                (new \DateTime())
+                    ->add(new \DateInterval('PT2H')),
+                'http://localhost/.well-known/mercure',
+                null,
+                false,
+                true,
+                false,
+                'strict'
+            )
+        );*/
+
+        return $response;
+    }
+
+    /**
+     * @Route("/prueba", name="app_prueba")
+     */
+    function prueba(SerializerInterface $serializer, PublisherInterface $publisher) {
+        $contenido = $serializer->serialize(['mensaje' => 'hola'], 'json');
+
+        $update = new Update(
+            [
+                "prueba"
+            ],
+            $contenido
+        );
+
+        $publisher($update);
+
+        return $this->json(['correcto' => true]);
     }
 }

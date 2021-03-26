@@ -369,6 +369,17 @@
 
 <script src="{{ asset('Componentes_externos/JQuery/jquery-3.4.1.js') }}"></script>
 <script src="{{ asset('Componentes_externos/Bootstrap_4.4.1/js/bootstrap.bundle.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let url = new URL('https://localhost:3000/.well-known/mercure')
+        url.searchParams.append('topic', 'prueba')
+        const eventSource = new EventSource(url)
+
+        eventSource.onmessage = function (event) {
+            debugger
+        }
+    })
+</script>
 <script src="{{ asset('js/Homepage/homepage.js') }}"></script>
 
 </body>
