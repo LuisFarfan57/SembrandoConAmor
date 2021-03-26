@@ -371,7 +371,11 @@
 <script src="{{ asset('Componentes_externos/Bootstrap_4.4.1/js/bootstrap.bundle.js') }}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        {% if app.environment == 'dev' %}
         let url = new URL('https://localhost:3000/.well-known/mercure')
+        {% else %}
+        let url = new URL('https://www.sembrandoconamor.com:3000/.well-known/mercure')
+        {% endif %}
         url.searchParams.append('topic', 'prueba')
         const eventSource = new EventSource(url)
 
